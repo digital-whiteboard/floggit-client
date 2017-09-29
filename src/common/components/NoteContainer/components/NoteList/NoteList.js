@@ -28,7 +28,7 @@ class NoteList extends React.Component {
     return (
       <ul className="NoteList">
         {
-          this.props.todos.map(noteContent => (
+          this.props.notes.map(noteContent => (
             <NoteContent
               animate
               key={noteContent.id}
