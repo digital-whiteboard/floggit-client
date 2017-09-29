@@ -21,7 +21,7 @@ class NoteList extends React.Component {
   }
 
   handleRemove(id) {
-    this.props.onNoteremove(id);
+    this.props.onNoteRemove(id);
   }
 
   render() {
