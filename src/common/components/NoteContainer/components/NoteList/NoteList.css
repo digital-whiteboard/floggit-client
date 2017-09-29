@@ -7,4 +7,3 @@
 .NoteList li:nth-child(odd) {
   background-color: var(--color-secondary);
 }
-
