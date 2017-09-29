@@ -9,19 +9,19 @@ const validateStatus = status => (response) => {
   return response;
 };
 
-const getAll = () => axios.get(`${SERVICE_URL}/v1/items`)
+const getAll = () => axios.get(`${SERVICE_URL}/v1/notes`)
   .then(validateStatus(200))
   .then(response => response.data);
 
 const add = value => axios({
   method: 'POST',
-  url: `${SERVICE_URL}/v1/items`,
+  url: `${SERVICE_URL}/v1/notes`,
   data: { value },
 })
   .then(validateStatus(201))
   .then(response => response.data.id);
 
-const remove = id => axios.delete(`${SERVICE_URL}/v1/items/${id}`)
+const remove = id => axios.delete(`${SERVICE_URL}/v1/notes/${id}`)
   .then(validateStatus(204));
 
 const notes = {
