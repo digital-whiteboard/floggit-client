@@ -1,7 +1,7 @@
 import React from 'react';
 
 import InputNotes from './components/InputNotes';
-//import NoteList from './components/NoteList';
+import NoteList from './components/NoteList';
 import { getAll, add, remove } from '../../../utils/notes';
 import './NoteContainer.css';
 

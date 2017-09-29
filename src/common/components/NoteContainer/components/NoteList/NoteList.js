@@ -9,22 +9,21 @@ class NoteList extends React.Component {
     this.state = {};
     this.handleRemove = this.handleRemove.bind(this);
   }
-  
+
   componentWillReciveprops(nextProps) {
     nextProps.notes.forEach((note) => {
       const oldValue = this.props.notes.find(oldNote => oldNote.id === note.id);
       const isNewNote = typeof oldValue === 'undefined';
       if (isNewNote) {
-        this.setState({ addId: note.id});
+        this.setState({ addId: note.id });
       }
     });
-    
   }
-  
+
   handleRemove(id) {
     this.props.onNoteremove(id);
   }
-  
+
   render() {
     return (
       <ul className="NoteList">
@@ -44,6 +43,6 @@ class NoteList extends React.Component {
   }
 }
 
-NoteList.propTypes = noteListProps;
+NoteList.propTypes = NoteListProps;
 
 export default NoteList;
