@@ -1,7 +1,7 @@
 import React from 'react';
 
 import InputNotes from './components/InputNotes';
-import NoteList from './components/NoteList';
+//import NoteList from './components/NoteList';
 import { getAll, add, remove } from '../../../utils/notes';
 import './NoteContainer.css';
 
@@ -47,7 +47,7 @@ class NoteContainer extends React.Component {
         <InputNotes onAdd={this.handleAdd} />
         <NoteList
           notes={this.state.notes}
-          onItemRemove={this.handleRemove}
+          onNoteRemove={this.handleRemove}
         />
       </div>
     );
