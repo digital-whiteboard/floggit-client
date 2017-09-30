@@ -10,12 +10,12 @@ class NoteList extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
   }
 
-  componentWillReciveprops(nextProps) {
+  componentWillReceiveProps(nextProps) {
     nextProps.notes.forEach((note) => {
       const oldValue = this.props.notes.find(oldNote => oldNote.id === note.id);
       const isNewNote = typeof oldValue === 'undefined';
       if (isNewNote) {
-        this.setState({ addId: note.id });
+        this.setState({ addedId: note.id });
       }
     });
   }
