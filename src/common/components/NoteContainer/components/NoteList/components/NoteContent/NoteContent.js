@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NoteContentProps from './NoteContent.props';
+import noteContentProps from './NoteContent.props';
 import './NoteContent.css';
 
 const NoteContent = (props) => {
@@ -21,6 +21,6 @@ const NoteContent = (props) => {
   );
 };
 
-NoteContent.propTypes = NoteContentProps;
+NoteContent.propTypes = noteContentProps;
 
 export default NoteContent;
