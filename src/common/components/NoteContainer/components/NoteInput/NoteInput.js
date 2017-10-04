@@ -1,8 +1,8 @@
 import React from 'react';
 
-import InputNotesProps from './InputNotes.props';
+import NoteInputProps from './NoteInput.props';
 
-const InputNotes = (props) => {
+const NoteInput = (props) => {
   let input;
 
   const handleClick = () => {
@@ -28,6 +28,6 @@ const InputNotes = (props) => {
   );
 };
 
-InputNotes.propTypes = InputNotesProps;
+NoteInput.propTypes = NoteInputProps;
 
-export default InputNotes;
+export default NoteInput;
