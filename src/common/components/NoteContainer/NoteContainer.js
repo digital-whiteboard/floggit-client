@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InputNotes from './components/InputNotes';
+import InputNotes from './components/NoteInput';
 import NoteList from './components/NoteList';
 import { getAll, add, remove } from '../../../utils/noteAPI';
 import './NoteContainer.css';
