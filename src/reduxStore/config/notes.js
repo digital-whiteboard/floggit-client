@@ -1,6 +1,5 @@
 import noteAPI from '../../utils/noteAPI';
 
-// ACTIONS
 const NOTE_ADD = 'NOTE_ADD';
 const NOTE_REMOVE = 'NOTE_REMOVE';
 const NOTE_LIST_REPLACE = 'NOTE_LIST_REPLACE';
@@ -12,7 +11,7 @@ const initialState = {
   isLoading: false,
   errorInfo: null,
 };
-// REDUCER
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case NOTE_ADD: {
@@ -38,7 +37,6 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-// ACTION CREATORS
 const internalAddNote = (id, value) => ({
   type: NOTE_ADD,
   data: {
@@ -66,14 +64,6 @@ const internalLoadingNotes = () => ({
 const internalLoadedNotes = () => ({
   type: NOTE_LOADED,
 });
-
-// Redux thunk action creator
-// This is needed to work with async api's
-// for example your webservice.
-// A redux thunk action creator is a double arrow function.
-// The second part of the function is executed by redux thunk middleware
-// It is given the stores dispatcher and it can also recieve
-// the getState function if you need to know the current store state.
 
 const addNote = value => dispatch => noteAPI.add(value)
   .then((id) => {
