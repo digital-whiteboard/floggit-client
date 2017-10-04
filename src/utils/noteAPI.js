@@ -29,4 +29,3 @@ const notes = {
 };
 
 export default notes;
-export { getAll, add, remove };

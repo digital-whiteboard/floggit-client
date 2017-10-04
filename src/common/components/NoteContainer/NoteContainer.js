@@ -2,7 +2,7 @@ import React from 'react';
 
 import InputNotes from './components/InputNotes';
 import NoteList from './components/NoteList';
-import { getAll, add, remove } from '../../../utils/notes';
+import { getAll, add, remove } from '../../../utils/noteAPI';
 import './NoteContainer.css';
 
 class NoteContainer extends React.Component {
