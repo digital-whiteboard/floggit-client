@@ -12,7 +12,7 @@ const NoteList = (props) => {
   return (
     <ul className="NoteList">
       {
-        props.todos.map(noteContent => (
+        props.notes.map(noteContent => (
           <NoteContent
             animate
             key={noteContent.id}
