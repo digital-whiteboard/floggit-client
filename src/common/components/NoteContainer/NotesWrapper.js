@@ -1,5 +1,7 @@
 import React from 'react';
 
+// mport TitleInput from './components/TitleInput';
+// import TitleDiv from './components/TitleDiv';
 import NoteInput from './components/NoteInput';
 import NoteList from './components/NoteList';
 import notesWrapperProps from './NotesWrapper.props';
