@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  onAdd: PropTypes.func.isRequire,
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default propTypes;

@@ -1,57 +1,20 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import InputNotes from './components/NoteInput';
-import NoteList from './components/NoteList';
-import { getAll, add, remove } from '../../../utils/noteAPI';
-import './NoteContainer.css';
+import NotesWrapper from './NotesWrapper';
+import { addNote, removeNote } from '../../../reduxStore/config/notes';
 
-class NoteContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      notes: [],
-    };
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
-  }
+const mapStateToProps = state => ({
+  notes: state.notes.data,
+  isLoading: state.notes.isLoading,
+});
 
-  componentDidMount() {
-    getAll().then((notes) => {
-      this.setState({ notes });
-    });
-  }
+const mapDispatchToProps = dispatch => ({
+  handleRemove: (id) => {
+    dispatch(removeNote(id));
+  },
+  handleAdd: (value) => {
+    dispatch(addNote(value));
+  },
+});
 
-
-  handleAdd(value) {
-    add(value).then((id) => {
-      this.setState({
-        notes: this.state.notes.concat([{
-          id,
-          value,
-        }]),
-      });
-    });
-  }
-
-  handleRemove(id) {
-    remove(id).then(() => {
-      this.setState({
-        notes: this.state.notes.filter(noteContent => noteContent.id !== id),
-      });
-    });
-  }
-
-  render() {
-    return (
-      <div className="NoteContainer-wrapper">
-        <InputNotes onAdd={this.handleAdd} />
-        <NoteList
-          notes={this.state.notes}
-          onNoteRemove={this.handleRemove}
-        />
-      </div>
-    );
-  }
-}
-
-export default NoteContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(NotesWrapper);

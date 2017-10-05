@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NoteInputProps from './NoteInput.props';
+import noteInputProps from './NoteInput.props';
 
 const NoteInput = (props) => {
   let input;
@@ -28,6 +28,6 @@ const NoteInput = (props) => {
   );
 };
 
-NoteInput.propTypes = NoteInputProps;
+NoteInput.propTypes = noteInputProps;
 
 export default NoteInput;
