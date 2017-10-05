@@ -1,6 +1,6 @@
 @import '../../../../../../css/variables/colors.css';
 
-li.NoteContent-content {
+li.TitleContent-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,11 +9,11 @@ li.NoteContent-content {
   padding: 5px;
 }
 
-.NoteContent-value {
+.TitleContent-value {
   line-height: 30px;
 }
 
-li.NoteContent-content.added-content {
+li.TitleContent-content.added-content {
   opacity: 0;
   animation: new-content-animation 1s ease-in forwards;
 }
