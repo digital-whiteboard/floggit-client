@@ -11,6 +11,10 @@ const TitleInput = (props) => {
     input.focus();
   };
 
+  const EditorMode = () => {
+
+  };
+
   return (
     <div>
       <input
@@ -23,6 +27,12 @@ const TitleInput = (props) => {
         onClick={handleClick}
       >
         add title
+      </button>
+      <button
+        type="button"
+        onClick={EditorMode}
+      >
+      *
       </button>
     </div>
   );
