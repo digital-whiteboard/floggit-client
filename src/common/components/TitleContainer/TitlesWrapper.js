@@ -20,7 +20,10 @@ const TitlesWrapper = (props) => {
 
   return (
     <div className="TitleContainer-wrapper">
-      <TitleInput onAdd={props.handleAdd} />
+      <TitleInput
+        onAdd={props.handleAdd}
+        onUpdate={props.handleUpdate}
+      />
       {
         props.isLoading ?
           generateLoadingWidget() : generateList(props.titles, props.handleRemove,

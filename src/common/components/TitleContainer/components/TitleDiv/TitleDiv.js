@@ -5,15 +5,23 @@ import titleDivProps from './TitleDiv.props';
 import './TitleDiv.css';
 
 const TitleDiv = (props) => {
+  let input;
+
   const handleRemove = (id) => {
     props.onTitleRemove(id);
   };
-  const handleUpdate = (id, value) => {
-    props.onTitleUpdate(id, value);
+
+  const handleUpdate = (id) => {
+    props.onTitleUpdate(id, input.value);
   };
 
   return (
     <div className="TitleDiv">
+      <input
+        type="text"
+        ref={(currentElement) => { input = currentElement; }}
+        placeholder="visibleAtClick"
+      />
       {
         props.titles.map(titleContent => (
           <TitleContent
