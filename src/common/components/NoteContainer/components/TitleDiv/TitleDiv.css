@@ -1,9 +1,0 @@
-@import '../../../../css/variables/colors.css';
-
-.NoteList {
-  margin: 2px;
-}
-
-.NoteList li:nth-child(odd) {
-  background-color: var(--color-secondary);
-}
