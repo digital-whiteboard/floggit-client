@@ -1,6 +1,6 @@
 import React from 'react';
 
-import noteTitleProps from './TitleInput.props';
+import titleInputProps from './TitleInput.props';
 
 const TitleInput = (props) => {
   let input;
@@ -28,6 +28,6 @@ const TitleInput = (props) => {
   );
 };
 
-TitleInput.propTypes = noteTitleProps;
+TitleInput.propTypes = titleInputProps;
 
 export default TitleInput;

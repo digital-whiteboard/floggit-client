@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const props = {
+const propTypes = {
   id: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   animate: PropTypes.bool,
   onRemove: PropTypes.func.isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
 
-export default props;
+export default propTypes;

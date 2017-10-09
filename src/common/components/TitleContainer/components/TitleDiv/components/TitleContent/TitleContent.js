@@ -14,16 +14,8 @@ const TitleContent = (props) => {
   return (
     <div className={`TitleContent-content ${animateClass}`}>
       <div className="TitleContent-value">{props.value}</div>
-      <button
-        onClick={update}
-      >
-      E
-      </button>
-      <button
-        onClick={remove}
-      >
-      X
-      </button>
+      <button onClick={update}> E </button>
+      <button onClick={remove}> X </button>
     </div>
   );
 };
