@@ -34,21 +34,18 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, { isLoading: false });
     }
     case NOTE_UPDATE: {
-      return Object.assign({}, state, {
-        value: Object.assign({}, state.data.value, { value: action.data.value }),
-      });
+      const oldNotes = state.data.filter(note => note.id !== action.data.id);
+      const updatedNotes = [...oldNotes, action.data];
+      return Object.assign({}, state, { data: updatedNotes });
     }
     default:
       return state;
   }
 };
 
-const internalAddNote = (id, value) => ({
+const internalAddNote = obj => ({
   type: NOTE_ADD,
-  data: {
-    id,
-    value,
-  },
+  data: obj,
 });
 
 const internalRemoveNote = id => ({
@@ -56,19 +53,14 @@ const internalRemoveNote = id => ({
   data: { id },
 });
 
-const internalReplaceAllNotes = notes => ({
+const internalReplaceAllNotes = obj => ({
   type: NOTE_LIST_REPLACE,
-  data: {
-    notes,
-  },
+  data: obj,
 });
 
-const internalUpdateNote = (id, value) => ({
+const internalUpdateNote = obj => ({
   type: NOTE_UPDATE,
-  data: {
-    id,
-    value,
-  },
+  data: obj,
 });
 
 const updateNote = (id, value) => dispatch => noteAPI.update(id, value)

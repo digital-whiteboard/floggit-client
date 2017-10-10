@@ -13,18 +13,18 @@ const getAll = () => axios.get(`${SERVICE_URL}/v1/notes`)
   .then(validateStatus(200))
   .then(response => response.data);
 
-const add = value => axios({
+const add = obj => axios({
   method: 'POST',
   url: `${SERVICE_URL}/v1/notes`,
-  data: { value },
+  data: obj,
 })
   .then(validateStatus(201))
   .then(response => response.data.id);
 
-const update = (id, value) => axios({
+const update = (id, obj) => axios({
   method: 'PUT',
   url: `${SERVICE_URL}/v1/notes/${id}`,
-  data: { value },
+  data: obj,
 })
   .then(validateStatus(201))
   .then(response => response.data.id);
