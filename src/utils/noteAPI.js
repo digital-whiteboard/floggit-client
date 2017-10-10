@@ -21,11 +21,19 @@ const add = value => axios({
   .then(validateStatus(201))
   .then(response => response.data.id);
 
+const update = (id, value) => axios({
+  method: 'PUT',
+  url: `${SERVICE_URL}/v1/notes/${id}`,
+  data: { value },
+})
+  .then(validateStatus(201))
+  .then(response => response.data.id);
+
 const remove = id => axios.delete(`${SERVICE_URL}/v1/notes/${id}`)
   .then(validateStatus(204));
 
 const notes = {
-  getAll, add, remove,
+  getAll, add, remove, update,
 };
 
 export default notes;
