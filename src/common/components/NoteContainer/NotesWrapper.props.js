@@ -8,6 +8,7 @@ const propTypes = {
   })),
   handleAdd: PropTypes.func.isRequired,
   handleRemove: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
 };
 
 export default propTypes;

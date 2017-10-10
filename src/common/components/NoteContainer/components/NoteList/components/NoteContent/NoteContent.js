@@ -8,15 +8,16 @@ const NoteContent = (props) => {
     props.onRemove(props.id);
   };
 
+  const update = () => {
+    props.onUpdate(props.id, props.value);
+  };
+
   const animateClass = props.animate ? 'added-content' : '';
   return (
     <li className={`NoteContent-content ${animateClass}`}>
       <div className="NoteContent-value">{props.value}</div>
-      <button
-        onClick={remove}
-      >
-      X
-      </button>
+      <button onClick={update} > E </button>
+      <button onClick={remove} > X </button>
     </li>
   );
 };

@@ -11,6 +11,10 @@ const NoteInput = (props) => {
     input.focus();
   };
 
+  const editorMode = () => {
+    // TODO
+  };
+
   return (
     <div>
       <input
@@ -23,6 +27,12 @@ const NoteInput = (props) => {
         onClick={handleClick}
       >
         add note
+      </button>
+      <button
+        type="button"
+        onClick={editorMode}
+      >
+        edit note
       </button>
     </div>
   );

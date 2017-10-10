@@ -6,6 +6,7 @@ const propTypes = {
     value: PropTypes.string.isRequired,
   })),
   onNoteRemove: PropTypes.func.isRequired,
+  onNoteUpdate: PropTypes.func.isRequired,
 };
 
 export default propTypes;

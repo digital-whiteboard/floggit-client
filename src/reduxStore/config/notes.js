@@ -5,6 +5,7 @@ const NOTE_REMOVE = 'NOTE_REMOVE';
 const NOTE_LIST_REPLACE = 'NOTE_LIST_REPLACE';
 const NOTE_LOADING = 'NOTE_LOADING';
 const NOTE_LOADED = 'NOTE_LOADED';
+const NOTE_UPDATE = 'NOTE_UPDATE';
 
 const initialState = {
   data: [],
@@ -32,6 +33,11 @@ const reducer = (state = initialState, action) => {
     case NOTE_LOADED: {
       return Object.assign({}, state, { isLoading: false });
     }
+    case NOTE_UPDATE: {
+      return Object.assign({}, state, {
+        value: Object.assign({}, state.data.value, { value: action.data.value }),
+      });
+    }
     default:
       return state;
   }
@@ -56,6 +62,19 @@ const internalReplaceAllNotes = notes => ({
     notes,
   },
 });
+
+const internalUpdateNote = (id, value) => ({
+  type: NOTE_UPDATE,
+  data: {
+    id,
+    value,
+  },
+});
+
+const updateNote = (id, value) => dispatch => noteAPI.update(id, value)
+  .then(() => {
+    dispatch(internalUpdateNote(id, value));
+  });
 
 const internalLoadingNotes = () => ({
   type: NOTE_LOADING,
@@ -87,5 +106,5 @@ const loadNotes = () => (dispatch) => {
     });
 };
 
-export { addNote, removeNote, loadNotes };
+export { addNote, removeNote, loadNotes, updateNote };
 export default reducer;

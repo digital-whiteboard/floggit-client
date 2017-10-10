@@ -5,6 +5,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   animate: PropTypes.bool,
   onRemove: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default propTypes;
