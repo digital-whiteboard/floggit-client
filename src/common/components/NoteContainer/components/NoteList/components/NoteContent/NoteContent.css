@@ -1,7 +1,9 @@
 @import '../../../../../../css/variables/colors.css';
 
-.div.NoteContent-title {
-  display: flex;
-  max-width: 500px;
-  flex-direction: row;
+.NoteContent-title textarea {
+  resize: none;
+  overflow: auto;
+  margin-bottom: -7px;
+  max-width: 135px;
+  height: 15px;
 }
