@@ -1,9 +1,38 @@
 @import '../../../../../../css/variables/colors.css';
 
+.NoteContent-title {
+  padding: 4px;
+}
+
+.NoteContent-title h2 {
+  color: #fefefe;
+  text-shadow: none;
+}
+
+.NoteContent-title div {
+  font-size: 13px;
+}
+
+.NoteContent-title * {
+  margin: 8px 3px;
+}
+
 .NoteContent-title textarea {
   resize: none;
   overflow: auto;
   margin-bottom: -7px;
   max-width: 135px;
-  height: 15px;
+  height: 24px;
+}
+
+.NoteContent-title input {
+  height: 24px;
+}
+
+.NoteContent-title select {
+  height: 24px;
+}
+
+.NoteContent-title button {
+  float:right;
 }

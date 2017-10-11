@@ -48,6 +48,7 @@ const internalReplaceAllNotes = notes => ({
 const internalUpdateNote = (id, title, noteList, color) => ({
   type: NOTE_UPDATE,
   data: {
+    id,
     title,
     noteList,
     color,
