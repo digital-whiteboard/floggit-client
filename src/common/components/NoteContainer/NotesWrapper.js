@@ -5,32 +5,16 @@ import NoteList from './components/NoteList';
 import notesWrapperProps from './NotesWrapper.props';
 import './NoteContainer.css';
 
-const NotesWrapper = (props) => {
-  const generateList = (notes, handleRemove, handleUpdate) => (
+const NotesWrapper = props => (
+  <div className="NoteContainer-wrapper">
+    <NoteInput onAdd={props.handleAdd} />
     <NoteList
-      notes={notes}
-      onNoteRemove={handleRemove}
-      onNoteUpdate={handleUpdate}
+      notes={props.notes}
+      onNoteRemove={props.handleRemove}
+      onNoteUpdate={props.handleUpdate}
     />
-  );
-
-  const generateLoadingWidget = () => (
-    <div> Loading </div>
-  );
-
-  return (
-    <div className="NoteContainer-wrapper">
-      <NoteInput
-        onAdd={props.handleAdd}
-        onUpdate={props.handleUpdate}
-      />
-      {
-        props.isLoading ?
-          generateLoadingWidget() : generateList(props.notes, props.handleRemove,
-            props.handleUpdate)}
-    </div>
-  );
-};
+  </div>
+);
 
 NotesWrapper.propTypes = notesWrapperProps;
 
