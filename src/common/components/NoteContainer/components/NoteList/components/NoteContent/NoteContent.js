@@ -37,13 +37,14 @@ const NoteContent = (props) => {
       />
       <select
         name="color"
+        defaultValue={props.color}
         ref={(currentElement) => { color = currentElement; }}
       >
         <option value="">Choose color</option>
-        <option value="#ff6e00" > Orange </option>
-        <option value="#630000" > WineRed </option>
-        <option value="#0d79f2" > Blue </option>
-        <option value="#ae469e" > Purple </option>
+        <option value="#ff6e00" > Chocolate </option>
+        <option value="#630000" > Grey </option>
+        <option value="#0d79f2" > BlueViolet </option>
+        <option value="#ae469e" > Yellow </option>
       </select>
       <button onClick={update} > EDIT </button>
       <button onClick={remove} > X </button>

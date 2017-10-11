@@ -9,10 +9,14 @@ const NoteInput = (props) => {
   let color;
 
   const handleClick = () => {
-    props.onAdd(title.value, noteList.value, color.value);
-    title.value = '';
-    noteList.value = '';
-    color.value = '';
+    if (title.value.length > 1 && noteList.value.length > 1 && color.value.length > 1) {
+      props.onAdd(title.value, noteList.value, color.value);
+      title.value = '';
+      noteList.value = '';
+      color.value = '';
+    } else {
+      alert('Write something...');
+    }
   };
 
   return (
@@ -20,12 +24,12 @@ const NoteInput = (props) => {
       <input
         type="text"
         ref={(currentElement) => { title = currentElement; }}
-        placeholder="title"
+        placeholder="Title text"
       />
       <textarea
         ref={(currentElement) => { noteList = currentElement; }}
         name="note-list"
-        placeholder="notes"
+        placeholder="Notes text"
       />
       <select
         name="color"
