@@ -20,7 +20,7 @@ const NoteInput = (props) => {
   };
 
   return (
-    <div className="Temp-or-Remove-ATM-ADDER">
+    <div className="controlBox">
       <input
         type="text"
         ref={(currentElement) => { title = currentElement; }}
@@ -37,24 +37,24 @@ const NoteInput = (props) => {
       >
         <option value="">Choose color</option>
         <option
-          value="#D2691E"
+          value="#3151b5"
         >
-              Chocolate
+              Indigo
         </option>
         <option
-          value="#DCDCDC"
+          value="#26a69a"
         >
-              Grey
+              Teal
         </option>
         <option
-          value="#8A2BE2"
+          value="#66bb6a"
         >
-              BlueViolet
+              Green
         </option>
         <option
-          value="#FFD700"
+          value="#ffa726"
         >
-              Yellow
+              Orange
         </option>
       </select>
       <button

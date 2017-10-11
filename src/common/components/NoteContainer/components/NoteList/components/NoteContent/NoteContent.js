@@ -13,10 +13,10 @@ const NoteContent = (props) => {
   };
 
   const update = () => {
-    props.onUpdate(props.id, title.value, noteList.value, color.value);
-    title.value = '';
-    noteList.value = '';
-    color.value = '';
+    const newColor = color.value ? color.value : props.color;
+    const newTitle = title.value ? title.value : props.title;
+    const newNoteList = noteList.value ? noteList.value : props.noteList;
+    props.onUpdate(props.id, newTitle, newNoteList, newColor);
   };
 
   return (
@@ -29,7 +29,7 @@ const NoteContent = (props) => {
         ref={(currentElement) => { title = currentElement; }}
         placeholder="new title"
       />
-      <textarea
+      <input
         type="note text"
         defaultValue={props.noteList}
         ref={(currentElement) => { noteList = currentElement; }}
@@ -41,13 +41,20 @@ const NoteContent = (props) => {
         ref={(currentElement) => { color = currentElement; }}
       >
         <option value="">Choose color</option>
-        <option value="#ff6e00" > Chocolate </option>
-        <option value="#630000" > Grey </option>
-        <option value="#0d79f2" > BlueViolet </option>
-        <option value="#ae469e" > Yellow </option>
+        <option value="#3151b5" > Indigo </option>
+        <option value="#26a69a" > Teal </option>
+        <option value="#66bb6a" > Green </option>
+        <option value="#ffa726" > Orange </option>
       </select>
-      <button onClick={update} > EDIT </button>
-      <button onClick={remove} > X </button>
+      <button
+        onClick={remove}
+        style={{ backgroundColor: props.color }}
+      >  X </button>
+      <button
+        className="fa fa-pencil"
+        onClick={update}
+        style={{ backgroundColor: props.color }}
+      />
     </div>
   );
 };
