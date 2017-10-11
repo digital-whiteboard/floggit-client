@@ -1,29 +1,7 @@
 @import '../../../../../../css/variables/colors.css';
 
-li.NoteContent-content {
+.div.NoteContent-title {
   display: flex;
+  max-width: 500px;
   flex-direction: row;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 5px;
-}
-
-.NoteContent-value {
-  line-height: 30px;
-}
-
-li.NoteContent-content.added-content {
-  opacity: 0;
-  animation: new-content-animation 1s ease-in forwards;
-}
-
-@keyframes new-content-animation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }

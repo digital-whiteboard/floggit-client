@@ -4,19 +4,18 @@ import NotesWrapper from './NotesWrapper';
 import { addNote, removeNote, updateNote } from '../../../reduxStore/config/notes';
 
 const mapStateToProps = state => ({
-  notes: state.notes.data,
-  isLoading: state.notes.isLoading,
+  notes: state.notes,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleRemove: (id) => {
     dispatch(removeNote(id));
   },
-  handleAdd: (value) => {
-    dispatch(addNote(value));
+  handleAdd: (title, noteList, color) => {
+    dispatch(addNote(title, noteList, color));
   },
-  handleUpdate: (id, value) => {
-    dispatch(updateNote(id, value));
+  handleUpdate: (id, title, noteList, color) => {
+    dispatch(updateNote(id, title, noteList, color));
   },
 });
 

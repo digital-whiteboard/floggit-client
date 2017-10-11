@@ -5,35 +5,24 @@ import noteListProps from './NoteList.props';
 import './NoteList.css';
 
 const NoteList = (props) => {
-  let input;
-
-  const isNotVisible = {
-    display: 'show',
-  };
-
   const handleRemove = (id) => {
     props.onNoteRemove(id);
   };
 
-  const handleUpdate = (id) => {
-    props.onNoteUpdate(id, input.value);
+  const handleUpdate = (id, title, noteList, color) => {
+    props.onNoteUpdate(id, title, noteList, color);
   };
 
   return (
     <ul className="NoteList">
-      <input
-        type="text"
-        ref={(currentElement) => { input = currentElement; }}
-        placeholder="update note"
-        style={isNotVisible}
-      />
       {
         props.notes.map(noteContent => (
           <NoteContent
-            animate
             key={noteContent.id}
             id={noteContent.id}
-            value={noteContent.value}
+            title={noteContent.title}
+            noteList={noteContent.noteList}
+            color={noteContent.color}
             onRemove={handleRemove}
             onUpdate={handleUpdate}
           />
